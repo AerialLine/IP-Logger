@@ -28,7 +28,7 @@ public final class Bungee extends Plugin implements Listener {
         try {
             map = load(path + "IPLogs.log");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            getLogger().info("Created log file. (fast start up)");
         }
         getLogger().info(ChatColor.GREEN + "Complete!");
     }
