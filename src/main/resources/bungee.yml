@@ -1,0 +1,3 @@
+name: IP-Logger
+version: '${project.version}'
+main: xyz.zarab.ip.logger.bungee.Bungee
