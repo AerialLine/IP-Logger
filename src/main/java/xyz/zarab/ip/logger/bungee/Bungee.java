@@ -53,9 +53,6 @@ public final class Bungee extends Plugin implements Listener {
 
     private void save(String path, Map<String, String> map) throws IOException {
         File file = new File(path);
-        file.getParentFile().mkdirs();
-        if (!file.exists())
-            file.createNewFile();
         FileWriter fw = new FileWriter(file, false);
         PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
         for(Map.Entry<String, String> entry : map.entrySet()) {
@@ -67,8 +64,11 @@ public final class Bungee extends Plugin implements Listener {
 
     private Map<String, String> load(String path) throws IOException {
         Map<String, String> map = new HashMap<>();
-        File f = new File(path);
-        BufferedReader in = new BufferedReader(new FileReader(f));
+        File file = new File(path);
+        file.getParentFile().mkdirs();
+        if (!file.exists())
+            file.createNewFile();
+        BufferedReader in = new BufferedReader(new FileReader(file));
         try {
             String str;
             String[] split;
