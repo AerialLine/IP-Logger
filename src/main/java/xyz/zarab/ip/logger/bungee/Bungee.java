@@ -20,8 +20,8 @@ public final class Bungee extends Plugin implements Listener {
     @Override
     public void onEnable() {
         getLogger().info("");
-        getLogger().info("| |   ");
-        getLogger().info("| |__ v1.0.0 \"IP Logger\" Plugin");
+        getLogger().info(ChatColor.AQUA + "| |   ");
+        getLogger().info(ChatColor.AQUA + "| |__ " + ChatColor.WHITE + "v1.0.0" + ChatColor.BLACK + " \"IP Logger\" "+ ChatColor.WHITE + "Plugin.");
         getLogger().info("");
         getLogger().info(ChatColor.AQUA + "initializing...");
         getProxy().getPluginManager().registerListener(this, this);
